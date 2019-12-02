@@ -165,7 +165,6 @@ def samples3(sample3):
     stmt = db.session.query(Flights).statement
    
     df = pd.read_sql_query(stmt, db.session.bind)
-   
   
     df['yrmo'] = pd.to_datetime( df['yrmo'], format='%Y%m')
     df['yrmo'] = df['yrmo'].dt.strftime('%Y-%m')
